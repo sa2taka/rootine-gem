@@ -1,3 +1,4 @@
 # frozen_string_literal: true
 
-require 'rootine/version'
+require 'rootine-gem/version'
+require 'rootine-gem/rootine'

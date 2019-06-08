@@ -23,7 +23,7 @@ def assing_word_roots_regexp(roots)
         root_pattern.append(root)
       end
     end
-    assinged_roots << [root_pattern.join("|").delete(" ")] + root_info
+    assinged_roots << ['^' + root_pattern.join("|^").delete(" ")] + root_info
   end
   assinged_roots
 end
@@ -52,13 +52,13 @@ end
 roots = CSV.read("work/roots.csv")
 suffixes = CSV.read("work/suffixes.csv")
 
-CSV.open("assigned_roots.csv", "wb") do |csv|
+CSV.open("roots.csv", "wb") do |csv|
   assing_word_roots_regexp(roots).each do |line|
     csv << line
   end
 end
 
-CSV.open("assigned_suffixes.csv", "wb") do |csv|
+CSV.open("suffixes.csv", "wb") do |csv|
   assing_suffix_regexp(suffixes).each do |line|
     csv << line
   end

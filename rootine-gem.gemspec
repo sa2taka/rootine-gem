@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "rootine/gem/version"
+require "rootine-gem/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "rootine-gem"
-  spec.version       = Rootine::Gem::VERSION
+  spec.version       = RootineGem::VERSION
   spec.authors       = ["sa2taka"]
   spec.email         = ["sa2taka@gmail.com"]
 

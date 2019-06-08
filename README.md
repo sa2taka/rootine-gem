@@ -1,8 +1,6 @@
-# Rootine::Gem
+# RootineGem
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rootine/gem`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Explore root in word.
 
 ## Installation
 
@@ -22,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+info = rootine.get_word_roots('telecommuter')
+# => [[0, 4, [331]], [4, 7, [64]], [7, 10, [215]], [10, 12, [38, 39, 40]]]
+rootine.roots[info[0][2][0]]
+# => ["^tel[eo]?", "tel/e/o", "far, distant, complete", "遠く、遠く、完全な", "Greek", "telephone - a device to talk to a distant person; telescope - a device to view distant objects; television - a device to receive pictures from afar; telecommuting - working remotely, bridging the distance via virtual devices."]
+```
+
+result ::= root_info, suffix_info
+root_info ::= [] | [root_start_at, root_end_at, regexp_indexes] | root_info, root_info
+suffix_info ::= [] | [root_start_at, root_end_at, regexp_indexes]
+root_start_at ::= number (0 <= i <= word.length)
+root_end_at ::= number (0 <= i <= word.length)
+regexp_indexes ::= regexp_index | regexp_indexes, regexp_index
+regexp_index ::= number
 
 ## Development
 
@@ -32,4 +43,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rootine-gem.
+Bug reports and pull requests are welcome on GitHub at https://github.com/sa2taka/rootine-gem.
